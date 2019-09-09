@@ -1,0 +1,13 @@
+<h1 class="mt-5">{{title}}</h1>
+<p class="lead">These are the regions with highest voter turnout in parliament elections, ordered by election year</p>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let turnout of highestTurnouts;index as i" [ngClass]="i == 0 || highestTurnouts[i].year != highestTurnouts[i-1].year ? '': 'year-duplicate'">
+    
+    <div class="row">
+      <div class="col-2 turnout-year">{{turnout.year}}</div> 
+      <div class="col turnout-name">{{turnout.name}}</div>
+      <div class="col turnout-percentage">{{turnout.percentage}}%</div>
+    </div>
+    
+  </li>
+</ul>
